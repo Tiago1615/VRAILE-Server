@@ -160,27 +160,6 @@ def check_status():
     
     return jsonify({"status": "OpenAI is up"}), 200
 
-def check_openai_status():
-    """
-    retrun False, 1 if OpenAI is down
-    retrun True, 0 if OpenAI is up
-    retrun False, 2 if there was an error checking the status
-    """
-    end_point = "https://status.openai.com/api/v2/summary.json"
-    try:
-        response = requests.get(end_point)
-        response.raise_for_status()
-
-        data = response.json()
-        status = data.get("status", {}).get("indicator")
-
-        if status != "none":
-            return False, 1
-        
-        return True, 0
-    except Exception as e:
-        return False, 2
-
 @app.route("/set-up", methods=["GET"])
 def set_up():
     try:
@@ -340,6 +319,27 @@ def amazonPolly(text, voice):
         return audio_base64
     except Exception as e:
         print("Error synthesizing speech:", str(e))
+
+def check_openai_status():
+    """
+    retrun False, 1 if OpenAI is down
+    retrun True, 0 if OpenAI is up
+    retrun False, 2 if there was an error checking the status
+    """
+    end_point = "https://status.openai.com/api/v2/summary.json"
+    try:
+        response = requests.get(end_point)
+        response.raise_for_status()
+
+        data = response.json()
+        status = data.get("status", {}).get("indicator")
+
+        if status != "none":
+            return False, 1
+        
+        return True, 0
+    except Exception as e:
+        return False, 2
 
 def get_patient_patology(patient):
     if patient == 0:
