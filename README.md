@@ -37,7 +37,7 @@ Con las respectivas credenciales, se puede actualizar el contenido del archivo `
 
 ## 🌍 Red
 
-Es necesario contar con acceso a una conexión de red a la que se encuentren conectadas tanto la máquina que va a alojar este servidor como las gafas de *VR* que se van a usar. Para determinar la dirección IP que va a ser usada por el servidor, se dispone del archivo `config.json`.
+Es necesario contar con una conexión de red, a la que se encuentren conectadas, tanto la máquina que va a alojar este servidor como las gafas de *VR* que se van a usar. Además, es necesario que esta red tenga conexión hacia el exterior, sólo así se podrá contactar con los servicios de *AWS* y *OpenAI*. Por otro lado, la dirección IP que va a ser usada por el servidor, se debe declarar en el archivo `.env`.
 
 ## ⚙️ Instalación
 
