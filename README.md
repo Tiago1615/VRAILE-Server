@@ -1,4 +1,4 @@
-# 🧠 VRAILE (Virtual Reality Learning Enviroment)
+# 🧠 VRAILE (Virtual Reality Artificial Inteligence Learning Environment)
 
 Este repositorio contiene el servidor local que sirve como intermediario entre la aplicación *VRAILE*. Este servidor está basado en Python y ha sido construido mediante un entorno Conda, que cuenta con un conjunto de dependencias listadas en `requirements.txt`.
 
@@ -21,11 +21,11 @@ Este repositorio contiene el servidor local que sirve como intermediario entre l
 
 ## 📒 Credenciales
 
-En caso de no contar con cuenta en *AWS* u *OpenAI Plataform*, será necesario crear una cuenta antes de utilizar este servidor. Puesto que, se emplean los servicios de *AWS Polly* y de los modelos de *IA* generativa de *OpenAI*.
+En caso de no contar con cuenta en *AWS* u *OpenAI Platform*, será necesario crear una cuenta antes de utilizar este servidor. Puesto que, se emplean los servicios de *AWS Polly* y de los modelos de *IA* generativa de *OpenAI*.
 
 [AWS](https://aws.amazon.com/es/)
 
-[OpenAI Plataform](https://platform.openai.com/docs/overview)
+[OpenAI Platform](https://platform.openai.com/docs/overview)
 
 Habiendo creado las cuentas, será necesario establecer las *API keys*. Para ello, estos vídeos son recomendables
 
@@ -43,12 +43,11 @@ Es necesario contar con acceso a una conexión de red a la que se encuentren con
 
 ### 🐍 Instalar Python y Anaconda
 
-Para instalar *Python*, desde *Windows* existen dos posibilidades. La primera, desde la propia tienda de *Windows*, buscar Python e instalar la versión que convenga. O si no, también existe la opción de descar e instalarlo desde la web:
+Para instalar *Python*, en *Windows* existen dos posibilidades. La primera, desde la propia tienda de *Windows*, buscar *Python* e instalar la versión que convenga. O si no, también existe la opción de descargar e instalarlo desde la web:
 
 [Python](https://www.python.org/downloads/)
 
-Desde otros sistemas operativos, lo más cómodo sería probablemente usar el enlace anterior, aunque también existe la opción de hacerlo mediante comandos:
-
+En otros sistemas operativos, lo más cómodo probablemente sería usar el enlace anterior, aunque también existe la opción de hacerlo mediante comandos:
 
 [Python en plataformas Unix](https://docs.python.org/es/3.13/using/unix.html)
 
@@ -62,7 +61,7 @@ De todas formas, este tutorial está bastante bien:
 
 ### 🔁 Crear el entorno de Conda
 
-Para crear el entorno de *Anaconda*, se abre el *Anaconda Prompt* y se ejecutan los comandos siguientes
+Para crear el entorno de *Anaconda*, se abre el *Anaconda Prompt* y se ejecutan los comandos siguientes:
 
 ```bash
 conda create -n NOMBRE_ENTORNO python=3.11.11
@@ -72,7 +71,7 @@ conda install -n NOMBRE_ENTORNO ipykernel --update-deps --force-reinstall
 
 ### 📚 Instalar las dependencias
 
-Para instalar las dependencias, desde la consola abierta antes por el *Anaconda Prompt*, es necesario navegar al directorio en el que se enquentra el archivo `requirements.txt` y luego se puede proceder a la instalación, como se muestra aquí:
+Para instalar las dependencias, desde la consola abierta antes por el *Anaconda Prompt*, es necesario navegar al directorio en el que se encuentra el archivo `requirements.txt` y luego se puede proceder a la instalación, como se muestra aquí:
 
 ```bash
 cd RUTA_AL_ARCHIVO_requirements.txt
