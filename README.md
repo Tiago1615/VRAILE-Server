@@ -27,7 +27,7 @@ En caso de no contar con cuenta en *AWS* u *OpenAI Platform*, será necesario cr
 
 [OpenAI Platform](https://platform.openai.com/docs/overview)
 
-Habiendo creado las cuentas, será necesario establecer las *API keys*. Para ello, estos vídeos son recomendables
+Habiendo creado las cuentas, será necesario establecer las *API keys*. Para ello, estos vídeos son recomendables:
 
 [API Keys AWS](https://www.youtube.com/watch?v=rdHqRRzltTo&list=PLrE-FZIEEls1-c7QifZYzeq50Id08FcJo&index=7)
 
