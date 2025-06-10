@@ -1,4 +1,3 @@
-import json
 import base64
 import io
 import os
@@ -13,14 +12,10 @@ load_dotenv()
 API_KEY = os.getenv("OPENAI_API_KEY")
 POLLY_ACCES_KEY = os.getenv("ACCESS_KEY")
 POLLY_SECRET_KEY = os.getenv("SECRET_KEY")
+SERVER_IP = os.getenv("SERVER_IP")
 
-if not API_KEY or not POLLY_ACCES_KEY or not POLLY_SECRET_KEY:
-    raise ValueError("Missing required environment variables: OPENAI_API_KEY, ACCESS_KEY, SECRET_KEY")
-
-with open("config.json") as config_file:
-    data = json.load(config_file)
-
-SERVER_IP = data["SERVER_IP"]
+if not API_KEY or not POLLY_ACCES_KEY or not POLLY_SECRET_KEY or not SERVER_IP:
+    raise ValueError("Missing required environment variables: OPENAI_API_KEY, ACCESS_KEY, SECRET_KEY, SERVER_IP")
 
 if SERVER_IP == "YOUR_SERVER_IP_HERE":
     raise ValueError("Please set your server IP in config.json")
