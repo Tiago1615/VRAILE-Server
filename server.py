@@ -4,6 +4,7 @@ import io
 import os
 from dotenv import load_dotenv
 import random
+import requests
 from flask import Flask, request, jsonify
 from openai import OpenAI
 import boto3
@@ -147,6 +148,38 @@ def chat():
     })
 
     return jsonify({"response": response}), 200
+
+@app.route("/cehck-status", methods=["GET"])
+def check_status():
+    status_openai, code = check_openai_status()
+    if status_openai is False:
+        if code == 1:
+            return jsonify({"status": "OpenAI is down"}), 503
+        elif code == 2:
+            return jsonify({"status": "Error checking OpenAI status"}), 500
+    
+    return jsonify({"status": "OpenAI is up"}), 200
+
+def check_openai_status():
+    """
+    retrun False, 1 if OpenAI is down
+    retrun True, 0 if OpenAI is up
+    retrun False, 2 if there was an error checking the status
+    """
+    end_point = "https://status.openai.com/api/v2/summary.json"
+    try:
+        response = requests.get(end_point)
+        response.raise_for_status()
+
+        data = response.json()
+        status = data.get("status", {}).get("indicator")
+
+        if status != "none":
+            return False, 1
+        
+        return True, 0
+    except Exception as e:
+        return False, 2
 
 @app.route("/set-up", methods=["GET"])
 def set_up():
